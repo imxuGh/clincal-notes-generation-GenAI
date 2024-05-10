@@ -195,9 +195,7 @@ def main():
 
         if prompt is not None:
           ai_generated_note = generate_note(prompt, system_role, perf_log)
-          # Calling decode at the end here may seem odd, but what it does is
-          # transform a python byte array into a string. The end result is
-          # the ChatGPT output as a Base64 encoded string.
+    
           encoded_note = b64encode(ai_generated_note.encode('utf-8')).decode()
           decoded_note = base64.b64decode(encoded_note).decode("utf-8")
           reference_id = dr['id']
