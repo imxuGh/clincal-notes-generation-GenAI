@@ -121,7 +121,7 @@ def build_template_context(patient, encounter, bundle):
     return context
 
 def create_template_environment():
-    return Environment(loader=PackageLoader("chatty"),
+    return Environment(loader=PackageLoader("clinicalnotes"),
                        autoescape=select_autoescape(), trim_blocks=True)
 
 def generate_note(prompt, role, perf_log):
